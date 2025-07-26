@@ -2,11 +2,44 @@
 <html>
   <head>
     <title>Rock Paper Scissors!</title>
+    <link rel="stylesheet" href="styles/style.css">
   </head>
 
   <body>
     <p class="title">Rock Paper Scissors!</p>
+
+    <div class="moves_row">
+      <button onclick="
+        play_game('rock');
+      " class="move_button">
+        <img src="images/rock-emoji.png" class="move_icon">
+      </button>
+
+      <button onclick="
+        play_game('paper');
+      " class="move_button">
+        <img src="images/paper-emoji.png" class="move_icon">
+      </button>
+
+      <button onclick="
+        play_game('scissors');
+      " class="move_button">
+        <img src="images/scissors-emoji.png" class="move_icon">
+      </button>
+    </div>
+
+    <p class="js_result result"></p>
+    <p class="js_moves"></p>
+    <p class="js_score score"></p>
     
+
+    <div>
+      <button onclick="
+        reset_score();
+      " class="reset_score_button">
+        Reset Score
+      </button>
+    </div>
     <script src="scripts/script.js"></script>
   </body>
 </html>
