@@ -26,7 +26,7 @@ function play_game(player_move) {
       result = 'You win!';
     }
     else if(computer_move === 'paper') {
-      result = 'Tue.';
+      result = 'Tie.';
     }
     else if(computer_move === 'scissors') {
       result = 'You lose.';
