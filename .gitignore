@@ -1,3 +1,29 @@
+# Virtual environment folder
+venv/
+
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+
+# VSCode settings folder (optional)
+.vscode/
+# OS files (macOS, Windows)
+.DS_Store
+Thumbs.db
+
+# Txt files
+notes.txt
+
+
+# py files
+deleted_routes.py
+test.py
+delete.py
+
+# env
+.env
+
 practice/*.html
 
 practice/*.css
