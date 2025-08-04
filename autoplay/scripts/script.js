@@ -34,13 +34,13 @@ function play_game(player_move) {
   }
   else if(player_move === 'scissors') {
     if(computer_move === 'rock') {
-      result = 'Tie.';
-    }
-    else if(computer_move === 'paper') {
       result = 'You lose.';
     }
-    else if(computer_move === 'scissors') {
+    else if(computer_move === 'paper') {
       result = 'You win!';
+    }
+    else if(computer_move === 'scissors') {
+      result = 'Tie.';
     }
   }
 
