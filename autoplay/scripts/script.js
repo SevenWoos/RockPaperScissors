@@ -100,3 +100,24 @@ function reset_score() {
   localStorage.removeItem('score');
   update_score_element();
 }
+
+let is_auto_playing = false;
+let interval_id;
+
+// Play game at every interval.
+function auto_play() {
+  if(!is_auto_playing) {
+      interval_id = setInterval(function() {
+      const player_move = pick_computer_move();
+      play_game(player_move);
+    }, 1000);
+
+    is_auto_playing = true;
+  }
+  // Stop an interval
+  else {
+    clearInterval(interval_id);
+    is_auto_playing = false;
+  }
+  
+}
