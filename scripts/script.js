@@ -93,10 +93,11 @@ function pick_computer_move() {
 
 
 function reset_score() {
+  localStorage.removeItem('score');
+
   score.wins = 0;
   score.losses = 0;
   score.ties = 0;
 
-  localStorage.removeItem('score');
   update_score_element();
 }
