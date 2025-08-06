@@ -20,6 +20,7 @@ body {
   background-color: transparent;
   border: 3px solid white;
   margin-right: 10px;
+  cursor: pointer;
 }
 
 .result {
