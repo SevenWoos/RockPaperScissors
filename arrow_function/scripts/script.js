@@ -106,9 +106,15 @@ function reset_score() {
 let is_auto_playing = false;
 let interval_id;
 
+
+// const auto_play = () => {
+
+// };
+
+// Enables hoisting. Can call function before creating it.
 function auto_play() {
   if(!is_auto_playing) {
-    interval_id = setInterval(function() {
+    interval_id = setInterval(() => {
     const player_move = pick_computer_move();
     play_game(player_move);
     }, 1000);
