@@ -47,6 +47,21 @@ document.querySelector('.js_auto_play_button')
     auto_play();
   })
 
+ 
+  // onkeydown
+  document.body.addEventListener('keydown', (event) => {
+    // console.log(event.key);
+    if (event.key === 'r') {
+      play_game('rock');
+    } 
+    else if(event.key === 'p') {
+      play_game('paper');
+    }
+    else if(event.key === 's') {
+    play_game('scissors');
+    }
+  });
+
 
 function play_game(player_move) {
   const computer_move = pick_computer_move();
