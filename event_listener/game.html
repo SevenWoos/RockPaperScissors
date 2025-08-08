@@ -10,21 +10,15 @@
     <p class="title">Rock Paper Scissors</p>
 
     <div class="move_div">
-      <button onclick="
-        play_game('rock');
-      " class="move_button">
+      <button class="move_button js_rock_button">
         <img src="images/rock-emoji.png" class="move_icon">
       </button>
 
-      <button onclick="
-        play_game('paper');
-      " class="move_button">
+      <button class="move_button js_paper_button">
         <img src="images/paper-emoji.png" class="move_icon">
       </button>
 
-      <button onclick="
-        play_game('scissors');
-      " class="move_button">
+      <button class="move_button js_scissors_button">
         <img src="images/scissors-emoji.png" class="move_icon">
       </button>
     </div>
@@ -34,15 +28,11 @@
     <p class="js_score score"></p>
 
     <div>
-      <button onclick="
-        reset_score();
-      " class="reset_score_button">
+      <button class="reset_score_button js_reset_score_button">
         Reset Score
       </button>
 
-      <button onclick="
-        auto_play();
-      " class="auto_play_button">
+      <button class="auto_play_button js_auto_play_button">
         Autoplay
       </button>
     </div>

@@ -21,6 +21,33 @@ function pick_computer_move() {
   return computer_move;
 }
 
+// Add Event Listeners
+document.querySelector('.js_rock_button')
+  .addEventListener('click', () => {
+    play_game('rock');
+  });
+
+document.querySelector('.js_paper_button')
+  .addEventListener('click', () => {
+    play_game('paper');
+  });
+
+document.querySelector('.js_scissors_button')
+  .addEventListener('click', () => {
+    play_game('scissors')
+  });
+
+document.querySelector('.js_reset_score_button')
+  .addEventListener('click', () => {
+    reset_score();
+  });
+
+document.querySelector('.js_auto_play_button')
+  .addEventListener('click', () => {
+    auto_play();
+  })
+
+
 function play_game(player_move) {
   const computer_move = pick_computer_move();
   let result = '';
