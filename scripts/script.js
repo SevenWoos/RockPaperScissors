@@ -66,13 +66,55 @@ function play_game(player_move) {
     <img src="images/${player_move}-emoji.png" class="move_icon">
     <img src="images/${computer_move}-emoji.png" class="move_icon">
     Computer`;
-}
+};
+
+
+// Event Listeners
+
+document.querySelector('.js_rock_button')
+  .addEventListener('click', () => {
+    play_game('rock');
+  });
+
+document.querySelector('.js_paper_button')
+.addEventListener('click', () => {
+  play_game('paper');
+});
+
+document.querySelector('.js_scissors_button')
+  .addEventListener('click', () => {
+    play_game('scissors');
+  });
+
+document.querySelector('.reset_score_button')
+  .addEventListener('click', ()=> {
+    reset_score();
+  });
+
+document.querySelector('.auto_play_button')
+  .addEventListener('click', () => {
+    auto_play();
+  });
+
+
+// onkeydown
+document.body.addEventListener('keydown', (event) => {
+  if(event.key === 'r') {
+    play_game('rock');
+  }
+  else if(event.key === 'p') {
+    play_game('paper');
+  }
+  else if(event.key === 's') {
+    play_game('scissors');
+  }
+});
 
 
 function update_score_element() {
   document.querySelector('.js_score')
     .innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
-}
+};
 
 
 function pick_computer_move() {
@@ -89,7 +131,7 @@ function pick_computer_move() {
     computer_move = 'scissors';
   }
   return computer_move;
-}
+};
 
 
 function reset_score() {
@@ -100,4 +142,23 @@ function reset_score() {
   score.ties = 0;
 
   update_score_element();
-}
+};
+
+
+let is_autoplaying = false;
+let interval_id;
+
+function auto_play() {
+  if(!is_autoplaying) {
+    interval_id = setInterval(() => {
+      const player_move = pick_computer_move();
+      play_game(player_move);
+    }, 1000);
+
+    is_autoplaying = true;
+  }
+  else {
+    clearInterval(interval_id);
+    is_autoplaying = false;
+  }
+};
