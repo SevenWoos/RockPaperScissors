@@ -108,7 +108,40 @@ document.body.addEventListener('keydown', (event) => {
   else if(event.key === 's') {
     play_game('scissors');
   }
+  else if(event.key === 'a') {
+   auto_play(); 
+  }
+  else if(event.key === 'Backspace') {
+    // reset_score();
+    show_reset_confirmation();
+  }
 });
+
+
+function show_reset_confirmation() {
+  document.querySelector('.js_reset_confirmation')
+    .innerHTML = `
+    Are you sure you want to reset the score?
+    <button class="js_reset_confirm_yes reset_confirm_button">Yes</button>
+    <button class="js_reset_confirm_no reset_confirm_button">No</button>
+    `;
+
+  document.querySelector('.js_reset_confirm_yes')
+  .addEventListener('click', () => {
+    reset_score();
+    hide_reset_confirmation();
+  });
+
+  document.querySelector('.js_reset_confirm_no')
+    .addEventListener('click', () => {
+      hide_reset_confirmation();
+    })
+};
+
+function hide_reset_confirmation() {
+  document.querySelector('.js_reset_confirmation')
+    .innerHTML = '';
+}
 
 
 function update_score_element() {
