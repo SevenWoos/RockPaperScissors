@@ -29,6 +29,6 @@ practice/*.html
 practice/*.css
 
 # Html, css, js
-delete.html
-delete.css
-delete.js
+# delete.html
+# delete.css
+# delete.js
