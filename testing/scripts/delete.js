@@ -44,7 +44,7 @@ function playGame(playerMove) {
     }
 
   } else if (playerMove === 'scissors') {
-    if (computerMove === 'rock') {
+    if (computerMove === 'rock'){
       result = 'You lose.';
     } else if (computerMove === 'paper') {
       result = 'You win.';
@@ -52,7 +52,6 @@ function playGame(playerMove) {
       result = 'Tie.';
     }
   }
-
 
   if (result === 'You win.') {
     score.wins+=1;
@@ -72,10 +71,11 @@ function playGame(playerMove) {
   document.querySelector('.js-moves')
     .innerHTML = `You 
       <img src="images/${playerMove}-emoji.png" class="move-icon">
-      <img src="images/${computerMove}-emoji.png" class="move-icon"
-      Computer>`;
-};
+      <img src="images/${computerMove}-emoji.png" class="move-icon">
+      Computer
+    `;
 
+};
 
 function updateScoreElement() {
   document.querySelector('.js-score')
@@ -102,7 +102,7 @@ function autoPlay() {
     isAutoPlaying = false;
 
     document.querySelector('.js-auto-play-button')
-      .innerHTML = `Autoplay`;
+      .innerHTML = 'Autoplay';
   }
 };
 
@@ -120,12 +120,11 @@ function showResetConfirmation() {
   document.querySelector('.js-reset-confirmation')
     .innerHTML = `
       Are you sure you want to reset the score?
-      
-      <button class="js-reset-confirm-yes reset-confirm-button">Yes</button>
 
+      <button class="js-reset-confirm-yes reset-confirm-button">Yes</button>
       <button class="js-reset-confirm-no reset-confirm-button">No</button>
-      `;
-  
+    `;
+
   document.querySelector('.js-reset-confirm-yes')
     .addEventListener('click', () => {
       resetScore();
@@ -135,15 +134,15 @@ function showResetConfirmation() {
 
   document.querySelector('.js-reset-confirm-no')
     .addEventListener('click', () => {
-
       hideResetConfirmation();
     });
 };
 
 function hideResetConfirmation() {
-  document.querySelector('.js-reset-confirmation')  
-  .innerHTML = ``;
+  document.querySelector('.js-reset-confirmation')
+    .innerHTML = ``;
 };
+
 
 // Event Listeners
 document.querySelector('.js-rock-button')
@@ -151,7 +150,7 @@ document.querySelector('.js-rock-button')
     playGame('rock');
 });
 
-document.querySelector('.js-paper-button')
+document.querySelector('.js-paper-button')  
   .addEventListener('click', () => {
     playGame('paper');
 });
@@ -166,10 +165,11 @@ document.querySelector('.js-auto-play-button')
     autoPlay();
 });
 
-document.querySelector('.js-reset-score-button')  
+document.querySelector('.js-reset-score-button')
   .addEventListener('click', () => {
     showResetConfirmation();
 });
+
 
 document.body.addEventListener('keydown', (event) => {
   if (event.key === 'r') {
